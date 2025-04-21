@@ -229,9 +229,11 @@ footer {
 
     .footer-info {
         margin: 48px 0 0;
+        text-align: center;
 
         @media screen and (min-width: $tablet) {
             margin: 64px 0 0;
+            text-align: unset;
         }
 
         p {
@@ -246,9 +248,11 @@ footer {
 
     .contact-info {
         margin: 48px 0 0;
+        text-align: center;
 
         @media screen and (min-width: $tablet) {
             margin: 64px 0 0;
+            text-align: unset;
         }
 
         display: flex;
