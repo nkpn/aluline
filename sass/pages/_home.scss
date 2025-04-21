@@ -1,0 +1,622 @@
+.hero {
+    .logo {
+        max-width: 150px;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .text-section {
+        text-align: center;
+    }
+
+    p {
+        text-transform: uppercase;
+    }
+}
+
+
+
+.news {   
+    .slide {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (min-width: $tablet) {
+                padding: 0 48px;
+        }
+
+        @media screen and (min-width: $desktop) {
+                padding: 0 104px;
+        }
+
+        .slide-icon {
+            width: 234px;
+            margin-bottom: 32px;
+        }
+
+        .carousel-title {
+            margin-bottom: 32px;
+        }
+
+        .source {
+            margin-bottom: 4px;
+        }
+
+        .caption {
+            margin-bottom: 32px;
+        }
+    }
+    .carousel-buttons {
+        display: none;
+        @media screen and (min-width:$tablet) {
+            display: block;
+        }
+    }
+}
+
+.about-us {
+    .about-us-img-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 64px;
+
+        @media screen and (min-width: $desktop) {
+            margin-bottom: 142px;
+        }
+
+        img {
+            max-width: 800px;
+            display: block;
+            box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+        }
+    }
+
+    .highlights {
+       .highglight-item {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+
+        // custom gap between 2nd and 3rd items on desktop
+        @media screen and (min-width:$desktop) {
+            &:nth-of-type(2) {
+                margin-right: 16px;
+            }
+            &:nth-of-type(3) {
+                margin-left: 16px;
+            }
+        }
+
+
+        .display-xl {
+            margin-bottom: 12px;
+        }
+        .text-lg {
+            margin-bottom: 8px;
+        }
+        .text-md {
+            color: $blueGray;
+        }
+       } 
+    }
+}
+
+.products {
+    background-color: $grayLightMobileBG;
+
+    .text-section {
+       h4 {
+            color: $bgColor;
+            font-family: $font;
+            
+            &:first-of-type {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .features-list {
+        gap: 40px;
+
+        @media screen and (min-width: $tablet) {
+            row-gap: 32px;
+            column-gap: 64px;
+        }
+    }
+
+    .features-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+
+        p {
+            color: $bgColor;
+            font-family: $font;
+
+            &:first-of-type {
+                margin-bottom: 12px;
+            }
+        }
+      
+        .text {
+            margin-bottom: 4px;
+            font-weight: 600;
+            color: $bgColor;
+        }
+
+        .text-lg {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.ceo-quote {
+    .two-columns-wrapper {
+        flex-direction: column-reverse;
+        gap: 64px;
+
+        @media screen and (min-width:$tablet) {
+           padding: 0 32px;
+        }
+
+        @media screen and (min-width:$desktop) {
+            flex-direction: row;
+            gap: 96px;
+            align-items: center;
+        }
+    }
+    .quote {
+        padding: 8px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        border-left: 2px solid $blue;
+    }
+    .ceo-quote-img-wrapper {
+        img {
+            box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+        }
+    }
+}
+
+.calculator-section {
+    background-color: $grayLightMobileBG;
+
+    .two-columns-wrapper {
+        gap: 64px;
+
+        @media screen and (min-width:$desktop) {
+            gap: 96px;
+        }
+
+        @media screen and (min-width:$desktop-large) {
+           gap: 148px;
+        }
+    }
+
+    .text-section {
+        align-items: center;
+        margin-bottom: 0;
+
+        @media screen and (min-width:$desktop) {
+           justify-content: flex-start;
+           align-items: unset;
+           text-align: left;
+        }
+
+        .badge {
+            @media screen and (min-width:$desktop) {
+                margin: 0 auto 12px 0;
+            }
+        }
+
+        .text {
+            margin-bottom: 32px;
+            max-width: unset;
+
+            @media screen and (min-width:$desktop) {
+               text-align: left;
+            }
+        }
+
+        h4 {
+            margin-bottom: 16px;
+            @media screen and (min-width:$desktop) {
+                text-align: left;
+                margin-bottom: 20px;
+             }
+        }
+        
+
+        .button-cta {
+            @media screen and (min-width:$desktop) {
+                margin-top: auto;
+                width: max-content;
+            }
+        }
+        
+    }
+
+    .calculator {
+        background-color: $white;
+        border: 1px solid $gray;
+        border-radius: 16px;
+        height: max-content;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+        .input-wrapper {
+            margin: 32px 24px;
+
+            &:nth-of-type(2){
+                margin: 0 24px 32px;
+
+                @media screen and (min-width:$desktop) {
+                    margin-bottom: 48px;
+                }
+            }
+
+            .labels-wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 16px;
+
+                label {
+                    color: $blueGray;
+                }
+
+                #amount-value, #period-value {
+                    font-family: $font;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 600;
+                    color: $text;
+                }
+            }
+        }
+        .output {
+            border-top: 1px solid $gray;
+            padding: 32px 24px;
+            text-align: center;
+
+            @media screen and (min-width:$desktop) {
+                    padding: 48px 32px;
+                }
+
+           .income-title {
+                margin-bottom: 8px;
+           }
+
+           #weekly-income {
+            font-family: $font;
+            font-size: 48px;
+            line-height: 60px;
+            letter-spacing: -0.02em;;
+            font-weight: 600;
+            color: $text;
+           }
+        }
+    }
+}
+
+/* Manual section*/
+.manual {
+    background-color: $white;
+
+    .two-columns-wrapper {
+        gap: 64px;
+
+        @media screen and (min-width: $desktop) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .text-section { 
+        @media screen and (min-width: $desktop) {
+            align-items: flex-start;
+
+            .text {
+                max-width: unset;
+            }
+
+            .badge {
+                margin: 0 auto 16px 0;
+            }
+        }
+    }
+
+    .features-list {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @media screen and (min-width: $tablet) {
+            gap: 48px;
+        }
+
+        .features-item {
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+            gap: 20px;
+
+            .icon-wrapper {
+               min-width: 40px;
+            }
+
+            .text-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                .text {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    
+}
+
+// Pricing section
+.pricing {
+    background-color: $grayLightMobileBG;
+
+    .pricing-card {
+        border-radius: 16px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border: 1px solid $cardBorder;
+        
+        .icon-wrapper {
+            padding: 0 16px;
+            min-width: 40px;
+            margin-top: 36px;
+            margin-bottom: 28px;
+         }
+
+         .plan-name {
+            padding: 0 16px;
+            font-family: $font;
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 600;
+            color: $blue;
+            margin-bottom: 8px;
+         }
+
+         .card-price {
+            padding: 0 16px;
+            font-family: $font;
+            font-size: 48px;
+            line-height: 60px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: $text;
+            margin-bottom: 8px;
+         }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 32px 0;
+        }
+    
+        .features-item {
+            display: flex; 
+            align-items: center;
+            gap: 12px;
+            img { width: 24px; }
+        }
+
+        .cta {
+            padding: 32px 16px;
+            width: 100%;
+            background-color: $grayLightMobileBG;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            box-shadow: 0px 16px 16px -12px rgba(16, 24, 40, 0.08);
+            button {
+                width: 100%;
+            }
+        }
+    }   
+
+    .slick-slider {
+        margin: 0 -8px;
+        overflow: hidden;
+        
+        @media screen and (min-width: $tablet) {
+            margin:0 -16px;
+        }
+    }
+
+
+    .slick-slide {
+        margin: 0 8px;
+
+        @media screen and (min-width: $tablet) {
+            margin: 0 16px;
+        }
+    }
+
+    // to show box shadow (because slick list has overflow: hidden)
+    .slick-list {
+        padding-bottom: 48px !important;
+        margin-bottom: -48px !important;
+    }
+}
+
+//  License section
+.license {
+    .two-columns-wrapper {
+        gap: 64px;
+
+        @media screen and (min-width:$desktop) {
+            gap: 96px;
+        }
+
+        @media screen and (min-width:$desktop-large) {
+           gap: 148px;
+        }
+    }
+
+    .text-section {
+        align-items: center;
+        margin-bottom: 0;
+
+        @media screen and (min-width:$desktop) {
+           justify-content: flex-start;
+           align-items: unset;
+           text-align: left;
+        }
+
+        .badge {
+            @media screen and (min-width:$desktop) {
+                margin: 0 auto 12px 0;
+            }
+        }
+
+        .text {
+            max-width: unset;
+
+            @media screen and (min-width:$desktop) {
+               text-align: left;
+               margin-bottom: 64px;
+            }
+        }
+
+        h4 {
+            margin-bottom: 16px;
+            @media screen and (min-width:$desktop) {
+                text-align: left;
+                margin-bottom: 20px;
+                max-width: 80%;
+             }
+        }
+        
+
+        .button-cta {
+            @media screen and (min-width:$desktop) {
+                margin-top: auto;
+                width: max-content;
+            }
+        }
+        
+    }
+}
+
+// Testimonals section
+.testimonals {
+    background-color: $grayLightMobileBG;
+
+    // to show box shadow (because slick list has overflow: hidden)
+    .slick-list {
+        padding-bottom: 48px !important;
+        margin-bottom: -48px !important;
+    }
+
+    .slick-slider {
+        margin: 0 -8px;
+        
+        @media screen and (min-width: $tablet) {
+            margin:0 -16px;
+        }
+    }
+
+    .slick-slide {
+        margin: 0 8px;
+
+        @media screen and (min-width: $tablet) {
+            margin: 0 16px;
+        }
+        
+    }
+
+    .testimonials-card {
+        border: 1px solid $gray;
+        border-radius: 16px;
+        padding: 24px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 16px 16px -12px rgba(16, 24, 40, 0.08);
+
+        .avatar {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .card-text {
+            font-family: $font;
+            color: $text;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card-name {
+            color: $text;
+            font-weight: 600;
+        }
+
+        .caption {
+            font-weight: 400;
+        }
+    }
+}
+
+// CTA Section
+.cta-section { 
+    background-color: $blue;
+
+    .two-columns-wrapper {
+        gap: 48px;
+
+        @media screen and (min-width:$desktop) {
+            flex-direction: row;
+            gap: 96px;
+            align-items: flex-start;
+        }
+
+        @media screen and (min-width:$desktop-large) {
+           gap: 148px;
+        }
+    }
+
+    .cta-text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+
+        @media screen and (min-width: $desktop) {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        h5, p {
+            color: $white;
+        }
+       
+    }
+
+    .cta-form {
+        label {
+            color: $gray;
+        }
+    }
+}
+

@@ -1,0 +1,328 @@
+// HEADER
+header {
+    background-color: $bgColor;
+    border-bottom: 1px solid $grayBorder;
+    overflow: hidden;
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: inherit;
+
+        @media screen and (min-width: $desktop-large) {
+            padding: 0 32px;
+            justify-content: unset;
+        }
+    }
+
+    // Mobile header
+    .header-logo {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+        justify-content: start;
+        padding: 12px 0;
+        transition: opacity 0.3s;
+
+        @media screen and (min-width: $desktop) {
+            padding: 16px 0;
+            gap: 16px;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        h1, h2 {
+            font-family: $font;
+            font-size: 28px;
+            line-height: 24px;
+            font-weight: 600;
+            color: $white;
+
+            @media screen and (min-width: $desktop) {
+                font-size: 36px;
+            }
+        }
+
+        img {
+            display: block;
+            max-width: 35px;
+
+             @media screen and (min-width: $desktop) {
+                max-width: 55px;
+            }
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 73px; // because mobile header took 72px
+        left: 0;
+        width: 100%;
+        height: calc( 100% - 73px); //100% - mobile header height
+        z-index: 100;
+        flex-direction: column;
+        gap: 32px;
+        background-color: $bgColor;
+        opacity: 0; // for animation
+        max-height: 0; // for animation
+        transition: opacity $animation-duration ease, max-height $animation-duration ease; // animation
+
+        &.opened{
+            max-height: 100%; // for animation
+            opacity: 1; // for animation
+            overflow: hidden;
+        }
+    }
+
+    // Custom hamburger with animation
+    .mobile-menu-icon {
+        z-index: 100;
+        height: 24px;
+        width: 24px;
+        font-size: 2px; // for label 'em' value
+        display: block;
+        position: relative;
+
+        @media screen and (min-width: $desktop) {
+            display: none;
+        }
+
+        label {
+            width: 10em;
+            height: 1.25em;
+            background-color: $text;
+            position: absolute;
+            cursor: pointer;
+            border-radius: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &::before,
+            &::after {
+              content: "";
+              width: 10em;
+              height: 1.5em;
+              background-color: $text;
+              position: absolute;
+              display: block;
+              border-radius: 2px;
+              color: $text;
+              transition: all $animation-duration $header-menu-animation;
+            }
+          
+            &::before {
+              top: -250%;
+            //   top: -6px;
+              left: 0%;
+              transform: rotateZ(0deg);
+              transform-origin: left top;
+            }
+          
+            &::after {
+              bottom: -250%;
+            //   bottom: -5px;
+              left: 0%;
+              transform: rotateZ(0deg);
+              transform-origin: left bottom;
+            }
+        }
+
+        #toggle:checked ~ label::before {
+            content: "";
+            background-color: $text;
+            transform: rotateZ(41deg);
+            left: 10%;
+            // left: 3px;
+        }
+
+        #toggle:checked ~ label::after {
+            content: "";
+            background-color: $text;
+            transform: rotateZ(-41deg);
+            left: 10%;
+            // left: 3px;
+        }
+
+        #toggle:checked ~ label {
+            background-color: $bgColor;
+        }
+
+        #toggle ~ label {
+            transition: all $animation-duration $header-menu-animation;
+        }
+    
+        input {
+            display: none;
+        }
+    }
+
+    .mobile-navigation {
+        margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .mobile-menu-footer {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+
+        .header-logo, .text-md:not(.rights-text) {
+            padding: 0 16px;
+        }
+
+        .header-logo {
+            margin-bottom: 24px;
+        }
+
+        .text-md:not(.rights-text) {
+            margin-bottom: 48px;
+        }
+
+        .rights-text {
+            color: $grayLightText;
+            padding: 40px 16px;
+            background-color: $grayLightMobileBG;
+        }
+    }
+
+    // Desktop header
+    .desktop-navigation {
+        display: none;
+        @media screen and (min-width: $desktop) {
+            margin-left: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+        }
+    }
+
+
+    .desktop-cta {
+        display: none;
+        @media screen and (min-width: $desktop) {
+            margin-left: auto;
+            display: block;
+        }
+    }
+}
+
+footer {
+    background-color: $bgColor;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: $text;
+
+    .two-columns-wrapper {
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .footer-info {
+        margin: 48px 0 0;
+
+        @media screen and (min-width: $tablet) {
+            margin: 64px 0 0;
+        }
+
+        p {
+            margin-top: 24px;
+
+            @media screen and (min-width: $desktop) {
+                margin-top: 32px;
+                max-width: 320px;
+            }
+        }
+    }
+
+    .contact-info {
+        margin: 48px 0 0;
+
+        @media screen and (min-width: $tablet) {
+            margin: 64px 0 0;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        i {
+            margin-right: 12px;
+        }
+
+        p, a {
+            transition: opacity 0.2s;
+
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .footer-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 32px;
+        margin: 0 0 48px 0;
+        width: 100%;
+
+        @media screen and (min-width: $desktop) {
+            margin: 64px 0;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-basis: 50%;
+
+            @media screen and (min-width: $desktop) {
+                flex-basis: unset;
+                flex-direction: row;
+                gap: 126px;
+            }
+        }
+    }
+
+    .social-icon {
+        margin-top: 12px;
+        margin-right: 12px;
+        font-size: 24px;
+        transition: opacity 0.2s;
+
+        &:hover {
+             opacity: 0.8;
+        }
+    }
+
+    .header-logo {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .footer-copyright {
+        background-color: $bgColor;
+        padding: 20px 0;
+        text-align: left;
+
+        @media screen and (min-width: $desktop) {
+            padding: 24px 0;
+        }
+    }
+
+   
+}
