@@ -225,6 +225,10 @@ footer {
     .two-columns-wrapper {
         justify-content: space-between;
         align-items: start;
+
+        @media screen and (min-width: $tablet) {
+            align-items: baseline;
+        }
     }
 
     .footer-info {
@@ -253,6 +257,7 @@ footer {
         @media screen and (min-width: $tablet) {
             margin: 64px 0 0;
             text-align: unset;
+            align-items: end;
         }
 
         display: flex;
