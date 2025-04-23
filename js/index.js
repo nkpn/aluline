@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Initial update
-  updateValues();
+  // updateValues();
 
   // Slider background logic to update
   function updateSliderBackground(slider, sliderValue) {
