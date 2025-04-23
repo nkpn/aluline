@@ -1,4 +1,4 @@
 User-Agent   
 Disallow 
-Host: allstarliga.com
+Host: aluline.es
 Sitemap: https:/allstarliga.com/sitemap.xml
