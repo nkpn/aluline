@@ -1281,6 +1281,23 @@ input[type=phone] {
   text-transform: uppercase;
 }
 
+#gallery .slick-initialized .slick-slide {
+  max-height: 300px;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  #gallery .slick-initialized .slick-slide {
+    max-height: 800px;
+  }
+}
+#gallery .slick-slide {
+  padding: 0 5px;
+}
+#gallery .slider-nav {
+  margin-top: 32px;
+}
+
 .ceo-quote .two-columns-wrapper {
   flex-direction: column-reverse;
   gap: 64px;

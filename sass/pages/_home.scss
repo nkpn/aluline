@@ -155,6 +155,27 @@
     }
 }
 
+#gallery {
+    .slick-initialized .slick-slide {
+        max-height: 300px;
+        display: flex;
+        align-items: center;
+
+         @media screen and (min-width:$tablet) {
+          max-height: 800px;
+        }
+        
+    }
+
+    .slick-slide {
+      padding: 0 5px;
+    }
+
+    .slider-nav {
+        margin-top: 32px;
+    }
+}
+
 .ceo-quote {
     .two-columns-wrapper {
         flex-direction: column-reverse;
