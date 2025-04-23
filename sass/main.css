@@ -581,6 +581,11 @@ footer .two-columns-wrapper {
   justify-content: space-between;
   align-items: start;
 }
+@media screen and (min-width: 768px) {
+  footer .two-columns-wrapper {
+    align-items: baseline;
+  }
+}
 footer .footer-info {
   margin: 48px 0 0;
   text-align: center;
@@ -611,6 +616,7 @@ footer .contact-info {
   footer .contact-info {
     margin: 64px 0 0;
     text-align: unset;
+    align-items: end;
   }
 }
 footer .contact-info i {
